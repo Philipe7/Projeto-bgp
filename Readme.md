@@ -19,7 +19,7 @@ Este projeto implementa um cenário completo de roteamento BGP baseado no exerc�
 
 **🏫 Instituição**: Instituto Federal de Educação, Ciência e Tecnologia da Paraíba (IFPB)  
 **👨‍🏫 Professor**: Pedro Filho  
-**👤 Aluno**: Luiz Philipe Lima de Andrade
+**👤 Aluno**: Luiz Philipe Lima de Andrade       
 **📅 Período**: 2025.1     
 **📚 Disciplina**: Redes Longa Distância  
 **🎯 Exercício**: BGP - Roteamento Inter-AS 
