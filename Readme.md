@@ -533,6 +533,7 @@ BGP-Project/
 
 **🏫 Instituição**: Instituto Federal de Educação, Ciência e Tecnologia da Paraíba (IFPB)  
 **👨‍🏫 Professor**: Pedro Filho  
+**👤 Aluno**: Luiz Philipe Lima de Andrade
 **📅 Período**: 2025  
 **📚 Disciplina**: Redes de Computadores Avançadas  
 **🎯 Exercício**: BGP - Roteamento Inter-AS  
@@ -549,14 +550,13 @@ BGP-Project/
 
 Este projeto é resultado de exercício acadêmico. Contribuições são bem-vindas para:
 - Melhorias na documentação
-- Scripts de automação adicionais
 - Expansão do cenário com novos AS
 - Implementação de RPKI/BGPsec
 - Monitoramento com ferramentas como ExaBGP
 
 ## 📄 Licença
 
-Este projeto é disponibilizado para fins educacionais. Respeite os direitos autorais do material original do IFPB.
+Este projeto é disponibilizado para fins educacionais. Respeite os direitos autorais do material.
 
 ---
 
