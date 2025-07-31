@@ -15,6 +15,15 @@ Este projeto implementa um cenário completo de roteamento BGP baseado no exerc�
 - ✅ **Engenharia de Tráfego** bidirecional
 - ✅ **Suporte a AS de Trânsito** com políticas restritivas
 
+## 👨‍🎓 Créditos Acadêmicos
+
+**🏫 Instituição**: Instituto Federal de Educação, Ciência e Tecnologia da Paraíba (IFPB)  
+**👨‍🏫 Professor**: Pedro Filho  
+**👤 Aluno**: Luiz Philipe Lima de Andrade
+**📅 Período**: 2025.1     
+**📚 Disciplina**: Redes de Computadores Avançadas  
+**🎯 Exercício**: BGP - Roteamento Inter-AS 
+
 ## 🏗️ Arquitetura Detalhada da Rede
 
 ### Topologia Implementada
@@ -528,15 +537,7 @@ External_Router# show ip bgp 200.20.0.0
 - **Conceito**: TTL Hack prevention
 - **Implementação**: `neighbor ttl-security hops X`
 - **Vantagem**: Dificulta ataques de longe
-
-## 👨‍🎓 Créditos Acadêmicos
-
-**🏫 Instituição**: Instituto Federal de Educação, Ciência e Tecnologia da Paraíba (IFPB)  
-**👨‍🏫 Professor**: Pedro Filho  
-**👤 Aluno**: Luiz Philipe Lima de Andrade
-**📅 Período**: 2025.1     
-**📚 Disciplina**: Redes de Computadores Avançadas  
-**🎯 Exercício**: BGP - Roteamento Inter-AS  
+ 
 
 ### Objetivos Pedagógicos Alcançados
 - ✅ Compreensão profunda do protocolo BGP
