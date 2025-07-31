@@ -534,7 +534,8 @@ BGP-Project/
 **🏫 Instituição**: Instituto Federal de Educação, Ciência e Tecnologia da Paraíba (IFPB)  
 **👨‍🏫 Professor**: Pedro Filho  
 **👤 Aluno**: Luiz Philipe Lima de Andrade
-**📅 Período**: 2025.1 
+**📅 Período**: 2025.1  
+
 **📚 Disciplina**: Redes de Computadores Avançadas  
 **🎯 Exercício**: BGP - Roteamento Inter-AS  
 
