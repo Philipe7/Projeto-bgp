@@ -21,7 +21,7 @@ Este projeto implementa um cenário completo de roteamento BGP baseado no exerc�
 **👨‍🏫 Professor**: Pedro Filho  
 **👤 Aluno**: Luiz Philipe Lima de Andrade
 **📅 Período**: 2025.1     
-**📚 Disciplina**: Redes de Computadores Avançadas  
+**📚 Disciplina**: Redes Longa Distância  
 **🎯 Exercício**: BGP - Roteamento Inter-AS 
 
 ## 🏗️ Arquitetura Detalhada da Rede
