@@ -78,7 +78,7 @@ Redes Públicas:
 ## ⚙️ Configurações Detalhadas Implementadas
 
 ### AS 10 - Router R7 (Configuração Completa)
-![Topologia](./src/R7.PNG)
+![Topologia](./src/R7.png)
 
 ```cisco
 hostname R7
