@@ -21,6 +21,29 @@ Este projeto implementa um cenário completo de roteamento BGP baseado no exerc�
 
 ![Topologia](./src/Topologia.jpg)
 
+## 📁 Estrutura Completa do Projeto
+
+```
+BGP-Project/
+├── README.md                 
+├── docs/
+│   ├── exercicio-bgp.pdf           
+│   └── topologia.png          
+├── configs/
+│   ├── AS10/
+│   │   └── R7-config.txt     
+│   ├── AS20/
+│   │   ├── R1-config.txt     
+│   │   ├── R2-config.txt     
+│   │   ├── R3-config.txt    
+│   │   └── R4-config.txt     
+│   └── external/
+│       ├── R6-config.txt     
+│       └── R8-config.txt     
+└── pnetlab/
+    └── CENÁRIO PROJETO BGP.zip     
+```
+
 ### Autonomous Systems Configurados
 #### AS 10 (R7) - Cliente com Redundância
 ![Topologia](./src/Redundancia10.png)
@@ -506,36 +529,12 @@ External_Router# show ip bgp 200.20.0.0
 - **Implementação**: `neighbor ttl-security hops X`
 - **Vantagem**: Dificulta ataques de longe
 
-## 📁 Estrutura Completa do Projeto
-
-```
-BGP-Project/
-├── README.md                 
-├── docs/
-│   ├── exercicio-bgp.pdf           
-│   └── topologia.png          
-├── configs/
-│   ├── AS10/
-│   │   └── R7-config.txt     
-│   ├── AS20/
-│   │   ├── R1-config.txt     
-│   │   ├── R2-config.txt     
-│   │   ├── R3-config.txt    
-│   │   └── R4-config.txt     
-│   └── external/
-│       ├── R6-config.txt     
-│       └── R8-config.txt     
-└── pnetlab/
-    └── CENÁRIO PROJETO BGP.zip     
-```
-
 ## 👨‍🎓 Créditos Acadêmicos
 
 **🏫 Instituição**: Instituto Federal de Educação, Ciência e Tecnologia da Paraíba (IFPB)  
 **👨‍🏫 Professor**: Pedro Filho  
 **👤 Aluno**: Luiz Philipe Lima de Andrade
-**📅 Período**: 2025.1  
-
+**📅 Período**: 2025.1     
 **📚 Disciplina**: Redes de Computadores Avançadas  
 **🎯 Exercício**: BGP - Roteamento Inter-AS  
 
