@@ -1,0 +1,133 @@
+CONFIG R3
+
+!
+hostname R3
+!
+boot-start-marker
+boot-end-marker
+!
+!
+!
+no aaa new-model
+!
+!
+!
+mmi polling-interval 60
+no mmi auto-configure
+no mmi pvc
+mmi snmp-timeout 180
+!
+!
+!
+!
+!
+no ip icmp rate-limit unreachable
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+
+
+!
+!
+!
+!         
+no ip domain lookup
+ip cef
+no ipv6 cef
+!
+multilink bundle-name authenticated
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+redundancy
+!
+no cdp log mismatch duplex
+!
+ip tcp synwait-time 5
+! 
+!
+!         
+!
+!
+!
+!
+!
+!
+!
+!
+!
+interface Ethernet0/0
+ ip address 10.20.34.3 255.255.255.0
+ duplex auto
+!
+interface Ethernet0/1
+ ip address 10.20.13.3 255.255.255.0
+ duplex auto
+!
+interface Ethernet0/2
+ ip address 1.10.20.3 255.255.255.0
+ duplex auto
+!
+interface Ethernet0/3
+ no ip address
+ duplex auto
+!
+router bgp 20
+ bgp log-neighbor-changes
+ neighbor 1.10.20.7 remote-as 10
+ neighbor 10.20.13.1 remote-as 20
+ neighbor 10.20.34.4 remote-as 20
+ !
+ address-family ipv4
+  neighbor 1.10.20.7 activate
+  neighbor 10.20.13.1 activate
+  neighbor 10.20.34.4 activate
+ exit-address-family
+!
+ip forward-protocol nd
+!
+!
+no ip http server
+no ip http secure-server
+!
+ipv6 ioam timestamp
+!
+!
+!
+control-plane
+!
+!
+!
+!
+!
+!
+!
+!
+line con 0
+ exec-timeout 0 0
+ privilege level 15
+ logging synchronous
+line aux 0
+ exec-timeout 0 0
+ privilege level 15
+ logging synchronous
+line vty 0 4
+ login
+ transport input none
+!
+!
+end

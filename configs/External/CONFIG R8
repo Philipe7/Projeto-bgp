@@ -1,0 +1,159 @@
+CONFIG R8
+
+!
+hostname R8-internet
+!
+boot-start-marker
+boot-end-marker
+!
+!
+enable secret 5 $1$J0Lk$LZ9xxH1xD08njR.PyW/IE0
+!
+no aaa new-model
+!
+!
+!
+mmi polling-interval 60
+no mmi auto-configure
+no mmi pvc
+mmi snmp-timeout 180
+!
+!
+!
+!
+!
+no ip icmp rate-limit unreachable
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+
+
+!
+!
+!
+!
+no ip domain lookup
+ip cef
+ipv6 unicast-routing
+ipv6 cef
+!
+multilink bundle-name authenticated
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+redundancy
+!
+no cdp log mismatch duplex
+!
+ip tcp synwait-time 5
+! 
+!
+!         
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+interface Loopback0
+ ip address 199.100.0.1 255.255.255.0
+!
+interface Loopback1
+ ip address 199.100.1.1 255.255.255.0
+!
+interface Loopback2
+ no ip address
+ ipv6 address 2003:100:100::1/64
+!
+interface Ethernet0/0
+ ip address 1.100.0.8 255.255.255.0
+ duplex auto
+ ipv6 address FC00:100::8/64
+!
+interface Ethernet0/1
+ ip address 1.100.10.8 255.255.255.0
+ duplex auto
+ ipv6 address FC00:100:10::8/64
+!
+interface Ethernet0/2
+ no ip address
+ duplex auto
+!
+interface Ethernet0/3
+ no ip address
+ duplex auto
+!
+router bgp 100
+ bgp log-neighbor-changes
+ no bgp default ipv4-unicast
+ neighbor 1.100.0.2 remote-as 20
+ neighbor 1.100.0.6 remote-as 30
+ neighbor 1.100.10.7 remote-as 10
+ neighbor FC00:100::6 remote-as 30
+ neighbor FC00:100:10::7 remote-as 10
+ !
+ address-family ipv4
+  network 199.100.0.0
+  network 199.100.1.0
+  neighbor 1.100.0.2 activate
+  neighbor 1.100.0.6 activate
+  neighbor 1.100.10.7 activate
+ exit-address-family
+ !
+ address-family ipv6
+  network 2003:100:100::/64
+  neighbor FC00:100::6 activate
+  neighbor FC00:100:10::7 activate
+ exit-address-family
+!
+ip forward-protocol nd
+!
+!
+no ip http server
+no ip http secure-server
+!
+ipv6 ioam timestamp
+!         
+!
+!
+control-plane
+!
+!
+!
+!
+!
+!
+!
+!
+line con 0
+ exec-timeout 0 0
+ privilege level 15
+ logging synchronous
+line aux 0
+ exec-timeout 0 0
+ privilege level 15
+ logging synchronous
+line vty 0 4
+ login
+ transport input none
+!         
+!
+end

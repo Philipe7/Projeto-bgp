@@ -1,0 +1,155 @@
+CONFIG R2 
+
+!
+hostname R2
+!
+boot-start-marker
+boot-end-marker
+!
+!
+!
+no aaa new-model
+!
+!
+!
+mmi polling-interval 60
+no mmi auto-configure
+no mmi pvc
+mmi snmp-timeout 180
+!
+!
+!
+!
+!
+no ip icmp rate-limit unreachable
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+
+
+!
+!
+!
+!         
+no ip domain lookup
+ip cef
+no ipv6 cef
+!
+multilink bundle-name authenticated
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+redundancy
+!
+no cdp log mismatch duplex
+!
+ip tcp synwait-time 5
+! 
+!
+!         
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+interface Loopback0
+ ip address 2.2.2.2 255.255.255.255
+!
+interface Ethernet0/0
+ ip address 10.20.12.2 255.255.255.0
+ duplex auto
+!
+interface Ethernet0/1
+ ip address 10.20.42.2 255.255.255.0
+ duplex auto
+!
+interface Ethernet0/2
+ no ip address
+ duplex auto
+!
+interface Ethernet0/2.20
+ encapsulation dot1Q 20
+ ip address 1.20.30.2 255.255.255.0
+!
+interface Ethernet0/3
+ no ip address
+ duplex auto
+!
+router bgp 20
+ bgp cluster-id 2
+ bgp log-neighbor-changes
+ neighbor 6.6.6.6 remote-as 30
+ neighbor 6.6.6.6 ttl-security hops 1
+ neighbor 6.6.6.6 update-source Loopback0
+ neighbor 10.20.12.1 remote-as 20
+ neighbor 10.20.42.4 remote-as 20
+ !
+ address-family ipv4
+  neighbor 6.6.6.6 activate
+  neighbor 6.6.6.6 weight 10
+  neighbor 6.6.6.6 route-map FILTRO-AS30 in
+  neighbor 10.20.12.1 activate
+  neighbor 10client
+  neighbor 10.20.42.4 activate
+  neighbor 10.20.42.4 route-reflector-client
+ exit-address-family
+!
+ip forward-protocol nd
+!
+!
+no ip http server
+no ip http secure-server
+ip route 6.6.6.6 255.255.255.255 1.20.30.6
+!
+!
+ip prefix-list SEM-TRANS seq 5 deny 0.0.0.0/0 le 32
+ip prefix-list SEM-TRANS seq 10 permit 200.20.0.0/24
+ipv6 ioam timestamp
+!
+route-map FILTRO-AS30 permit 10
+ match ip address prefix-list SEM-TRANS
+!
+!
+!         
+control-plane
+!
+!
+!
+!
+!
+!
+!
+!
+line con 0
+ exec-timeout 0 0
+ privilege level 15
+ logging synchronous
+line aux 0
+ exec-timeout 0 0
+ privilege level 15
+ logging synchronous
+line vty 0 4
+ login
+ transport input none
+!
+!
+end       
