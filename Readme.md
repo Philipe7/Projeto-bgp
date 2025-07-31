@@ -510,27 +510,23 @@ External_Router# show ip bgp 200.20.0.0
 
 ```
 BGP-Project/
-├── README.md                 # Este arquivo
+├── README.md                 
 ├── docs/
-│   ├── exercicio-bgp.pdf     # Enunciado original IFPB
-│   ├── topologia.png         # Diagrama da rede
-│   └── resultados/           # Screenshots de verificação
+│   ├── exercicio-bgp.pdf           
+│   └── topologia.png          
 ├── configs/
 │   ├── AS10/
-│   │   └── R7-config.txt     # Config completa R7
+│   │   └── R7-config.txt     
 │   ├── AS20/
-│   │   ├── R1-config.txt     # Config R1 (cliente RR)
-│   │   ├── R2-config.txt     # Config R2 (filtros)
-│   │   ├── R3-config.txt     # Config R3 (Route Reflector)
-│   │   └── R4-config.txt     # Config R4 (cliente + gateway)
+│   │   ├── R1-config.txt     
+│   │   ├── R2-config.txt     
+│   │   ├── R3-config.txt    
+│   │   └── R4-config.txt     
 │   └── external/
-│       ├── R6-config.txt     # AS 30 (se disponível)
-│       └── R8-config.txt     # AS 100 (se disponível)
-├── scripts/
-│   ├── verificacao.sh        # Scripts de teste
-│   └── deploy.sh            # Automação de deploy
+│       ├── R6-config.txt     
+│       └── R8-config.txt     
 └── pnetlab/
-    └── bgp-project.pnet     # Arquivo do PNETLab
+    └── CENÁRIO PROJETO BGP.zip     
 ```
 
 ## 👨‍🎓 Créditos Acadêmicos
