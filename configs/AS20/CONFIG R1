@@ -1,5 +1,3 @@
-CONFIG R1
-
 !
 hostname R1
 !
@@ -37,7 +35,7 @@ mmi snmp-timeout 180
 !
 !
 !
-ip cef    
+ip cef
 no ipv6 cef
 !
 multilink bundle-name authenticated
@@ -60,11 +58,15 @@ redundancy
 !
 !
 !
-!         
 !
 !
 !
 !
+!
+!
+!
+interface Loopback0
+ no ip address
 !
 interface Ethernet0/0
  ip address 10.20.12.1 255.255.255.0
@@ -87,6 +89,7 @@ interface Ethernet0/3
 router bgp 20
  bgp log-neighbor-changes
  neighbor 10.20.12.2 remote-as 20
+ neighbor 10.20.12.2 cluster-id 0.0.0.2
  neighbor 10.20.13.3 remote-as 20
  !
  address-family ipv4
@@ -101,7 +104,7 @@ no ip http server
 no ip http secure-server
 !
 ipv6 ioam timestamp
-!         
+!
 !
 !
 control-plane
